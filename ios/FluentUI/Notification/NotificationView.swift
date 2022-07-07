@@ -210,7 +210,7 @@ open class NotificationView: UIView {
         actionButton.titleLabel?.adjustsFontForContentSizeCategory = true
         return actionButton
     }()
-    private let separator = Separator(style: .shadow, orientation: .horizontal)
+    private let divider = MSFDivider()
 
     private var hasSingleLineLayout: Bool {
         return titleLabel.text?.isEmpty == true && messageLabel.frame.height == messageLabel.font.deviceLineHeight
@@ -241,8 +241,8 @@ open class NotificationView: UIView {
         addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
 
-        addSubview(separator)
-        separator.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(divider)
+        divider.translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -258,9 +258,9 @@ open class NotificationView: UIView {
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
             backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
             backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            separator.leadingAnchor.constraint(equalTo: leadingAnchor),
-            separator.trailingAnchor.constraint(equalTo: trailingAnchor),
-            separator.bottomAnchor.constraint(equalTo: topAnchor),
+            divider.leadingAnchor.constraint(equalTo: leadingAnchor),
+            divider.trailingAnchor.constraint(equalTo: trailingAnchor),
+            divider.bottomAnchor.constraint(equalTo: topAnchor),
             container.topAnchor.constraint(equalTo: topAnchor),
             container.bottomAnchor.constraint(equalTo: bottomAnchor),
             container.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Constants.horizontalPadding),
@@ -523,7 +523,7 @@ open class NotificationView: UIView {
         layer.cornerRadius = style.cornerRadius
         layer.cornerCurve = .continuous
 
-        separator.isHidden = !style.needsSeparator
+        divider.isHidden = !style.needsSeparator
 
         updateWindowSpecificColors()
     }
