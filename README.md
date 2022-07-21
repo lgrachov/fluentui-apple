@@ -24,7 +24,7 @@ To integrate FluentUI using SwiftUI, specify it as a dependency in your Xcode pr
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/microsoft/fluentui-apple.git", .upToNextMinor(from: "X.X.X")),
+    .package(url: "https://github.com/lgrachov/fluentui-apple.git", .upToNextMinor(from: "X.X.X")),
 ],
 ```
 
